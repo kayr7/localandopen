@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>{{ query.q }} | Local-and-Open</title>
+	</head>
+	<body>
+		<header>
+			<h1>Local-and-Open</h1>
+			{{> search_form q=query.q}}
+		</header>
+		<h2>Resultate für {{ query.q }}</h2>
+		{{#each results as |result|}}
+		{{> result result=result}}
+		{{/each}}
+	</body>
+</html>
