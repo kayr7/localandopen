@@ -1,0 +1,115 @@
+
+<html>
+	<head>
+        <title>Local-and-Open</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</head>
+	<body>
+<div>
+    <div class="card text-center" style="width: 80%;">
+        <div class="card-header">
+            Shop eintragen
+        </div>
+
+    <div class="card-body">
+        <div class="card-subtitle mb-2 text-muted">
+           Aufnahme von ihrem Shop in die Datenbank
+        </div>
+
+        <div class=card-text>
+            Bitte f&uuml;llen Sie die folgenden Felder aus,
+            damit wir Ihren Shop entsprechend listen k&ouml;nnen.
+        </div>
+        <br>
+        <form>
+            <div class="form-group">
+                <div class="form-row justify-content-md-center">
+                    <div class="col-3">
+                    <label for="shopname">Name des Gesch&auml;fts</label>
+                    </div>
+                    <div class="col">
+                    <input type="text" class="form-control" id="shopname" placeholder="Gesch&auml;ftsname">
+                    </div>
+                </div>
+                <div class="form-row justify-content-md-center">
+                    <div class="col-3">
+                    <label for="branche">Branche</label>
+                    </div>
+                    <div class="col">
+                    <input type="text" class="form-control" id="branche" placeholder="Kinderspielzeug">
+                    </div>
+                </div>
+                <div class="form-row justify-content-md-center">
+                    <div class="col-3">
+                    <label for="branche">Kurzbeschreibung des Angebots</label>
+                    </div>
+                    <div class="col">
+                    <textarea class="form-control" id="shortdescription" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-row justify-content-md-center">
+                    <div class="col-3">
+                    <label for="onlineshop">Onlineshop</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" class="form-check-input" id="onlineshop">
+                        <label class="form-check-label" for="onlineshop">Einkauf &uuml;ber Onlineshop m&ouml;glich</label>
+                    </div>
+                </div>
+                <div class="form-row justify-content-md-center">
+                    <div class="col-3">
+                    <label for="website">Webseite</label>
+                    </div>
+                    <div class="col">
+                    <input type="text" class="form-control" id="website" placeholder="http://...">
+                    </div>
+                </div>
+                <div class="form-row justify-content-md-center">
+                    <div class="col-3">
+                    <label for="mail">E-Mail</label>
+                    </div>
+                    <div class="col">
+                    <input type="email" class="form-control" id="email" placeholder="email">
+                    </div>
+                </div>
+                <div class="form-row justify-content-md-center">
+                    <div class="col-3">
+                    <label for="phone">Telefonnummer</label>
+                    </div>
+                    <div class="col">
+                    <input type="numeric" class="form-control" id="phone" placeholder="555-...">
+                    </div>
+                </div>
+                <div class="form-row justify-content-md-center">
+                    <div class="col-3">
+                    <label for="adress">Adresse</label>
+                    </div>
+                    <div class="col-4">
+                    <input type="text" class="form-control" id="address" placeholder="Adresse">
+                    </div>
+                    <div class="col">
+                    <input type="numeric" class="form-control" placeholder="Postleitzahl">
+                    </div>
+                    <div class="col">
+                    <input type="text" class="form-control" placeholder="Stadt">
+                    </div>
+                </div>
+                <div class="form-row justify-content-md-center">
+                    <div class="col-35">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Hiermit stimmen Sie zu, dass Sie berechtigt sind, die hier angegebenen Daten zur Verfuegung zu stellen</label>
+                          </div>              
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>       
+        </div>
+    </div>
+
+</body>
+</html>

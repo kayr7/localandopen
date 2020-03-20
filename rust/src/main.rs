@@ -47,6 +47,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         "search_results",
         include_str!("templates/search_results.html"),
     )?;
+    hb.register_template_string("newvendor", include_str!("templates/newvendor.html"))?;
+
     hb.register_partial("result", include_str!("templates/_result.html"))?;
     hb.register_partial("search_form", include_str!("templates/_search_form.html"))?;
 
@@ -64,6 +66,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
         })
         .map(move |tpl| render(tpl, hb1.clone()));
+
 
     let hb2 = hb.clone();
     let search = warp::get()
@@ -88,7 +91,18 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         })
         .map(move |tpl| render(tpl, hb2.clone()));
 
-    let app = search.or(index);
+    let hb3 = hb.clone();
+    let newvendor = warp::get()
+        .and(warp::path("newvendor")).map(|| {
+            let vars = SearchQuery { q: "".to_owned() };
+            WithTemplate{
+                name: "newvendor",
+                vars,
+            }
+        }).map(move |tpl| render(tpl, hb3.clone()));
+
+
+    let app = search.or(index).or(newvendor);
 
     warp::serve(app).run(([0, 0, 0, 0], config.port)).await;
 
