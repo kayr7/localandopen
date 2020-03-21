@@ -8,7 +8,7 @@ begin;
 		description text not null,
 		onlineshop boolean not null default false,
 		website_url varchar constraint website_len check (website_url is null or length(website_url) > 0),
-		email varchar not null,
+		email varchar not null constraint email_len check (length(email) > 0),
 		phone varchar constraint phone_len check (phone is null or length(phone) > 0),
 		address varchar not null constraint address_len check (length(address) > 0),
 		zip varchar not null constraint zip_len check (length(zip) > 0),

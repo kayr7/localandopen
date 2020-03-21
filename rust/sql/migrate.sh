@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # source a .env file if it exists
-if [ -e .env ]; then
+if [ -r .env ]; then
 	. .env
 fi
 
