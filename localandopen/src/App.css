@@ -12,6 +12,24 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+@font-face {
+  font-family: 'Sofija';
+  src: url('Sofija.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sofija-Italic';
+  src: url('Sofija-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.rund {
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px
+}
 
 .App-header {
   background-color: #282c34;
