@@ -118,7 +118,7 @@ class Register extends Component {
     let regalert = '';
     if (this.state.registered !== '') {
       regalert = (
-        <Alert key="alert" variant="success">
+        <Alert key="alert" variant="primary">
           {this.state.registered}
         </Alert>
       );
@@ -135,8 +135,6 @@ class Register extends Component {
     return (
       <div>
         {forward}
-        {alert}
-        {regalert}
         <Card
           className="text-center"
           style={{
@@ -175,6 +173,8 @@ class Register extends Component {
             </Container>
           </Card.Body>
         </Card>
+        {alert}
+        {regalert}
         <Row className="justify-content-md-center mt-4">
           <Card className="text-center" style={{width: '18rem'}}>
             <Card.Header as="h5">Login / Register</Card.Header>

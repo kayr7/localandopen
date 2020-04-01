@@ -35,6 +35,7 @@ class ShopInput extends React.Component {
         delivery: 0,
         mail_order: 0,
         voucher: 0,
+        pickup: 0,
         website: '',
         mail: '',
         phone: '',
@@ -55,6 +56,7 @@ class ShopInput extends React.Component {
         delivery: 0,
         mail_order: 0,
         voucher: 0,
+        pickup: 0,
         website: '',
         mail: '',
         phone: '',
@@ -82,6 +84,7 @@ class ShopInput extends React.Component {
     this.handleDeliveryUpdate = this.handleDeliveryUpdate.bind (this);
     this.handleMailOrderUpdate = this.handleMailOrderUpdate.bind (this);
     this.handleVoucherUpdate = this.handleVoucherUpdate.bind (this);
+    this.handlePickupUpdate = this.handlePickupUpdate.bind (this);
     this.handleWebsiteUpdate = this.handleWebsiteUpdate.bind (this);
     this.handleMailUpdate = this.handleMailUpdate.bind (this);
     this.handlePhoneUpdate = this.handlePhoneUpdate.bind (this);
@@ -136,6 +139,13 @@ class ShopInput extends React.Component {
     this.setState ({
       input: update (this.state.input, {
         voucher: {$set: event.target.checked ? 1 : 0},
+      }),
+    });
+  }
+  handlePickupUpdate (event) {
+    this.setState ({
+      input: update (this.state.input, {
+        pickup: {$set: event.target.checked ? 1 : 0},
       }),
     });
   }
@@ -237,7 +247,6 @@ class ShopInput extends React.Component {
         .then (resp => resp.json ())
         .then (dat => {
           if (dat.status === false) {
-            console.log (dat);
             this.setState ({alert: dat.message});
             this.setState ({success: false});
           } else {
@@ -301,7 +310,7 @@ class ShopInput extends React.Component {
     } else {
       if (this.state.success) {
         alert = (
-          <Alert key="alert" variant="success">
+          <Alert key="alert" variant="primary">
             "Ihr Angebot wurde erfolgreich aufgenommen"
           </Alert>
         );
@@ -415,6 +424,17 @@ class ShopInput extends React.Component {
                           />
                         </Col>
                       </Row>
+                      <Row>
+                        <Col>
+                        <Form.Check
+                            type="checkbox"
+                            checked={this.state.input.pickup}
+                            onChange={this.handlePickupUpdate}
+                            label="Selbstabholer"
+                          />
+                        </Col>
+                      </Row>
+
                     </ListGroup.Item>
                     <ListGroup.Item>
                       <Form.Control

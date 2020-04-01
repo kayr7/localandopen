@@ -1,7 +1,7 @@
 package models
 
 import (
-	"fmt"
+//	"fmt"
 	"github.com/jinzhu/gorm"
 	u "utils"
 )
@@ -16,6 +16,7 @@ type Vendor struct {
 	Delivery uint `json:"delivery"`
 	MailOrder uint `json:"mail_order"`
 	Voucher uint `json:"voucher"`
+	Pickup uint `json:"pickup"`
 	Website string `json:"website"`
 	Mail string `json:"mail"`
 	Phone string `json:"phone"`
@@ -53,7 +54,6 @@ func (vendor *Vendor) Validate() (map[string]interface{}, bool) {
 	if vendor.UserId <= 0 {
 		return u.Message(false, "User is not recognized"), false
 	}
-	fmt.Println("alles OK")
 
 	//All the required parameters are present
 	return u.Message(true, "success"), true
@@ -117,7 +117,6 @@ func GetVendors() ([]*Vendor) {
 	vendors := make([]*Vendor, 0)
 	err := GetDB().Table("vendors").Find(&vendors).Error
 	if err != nil {
-		fmt.Println(err)
 		return nil
 	}
 

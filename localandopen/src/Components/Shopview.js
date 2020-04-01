@@ -192,6 +192,7 @@ class ShopList extends React.Component {
               mail_order={vendor.mail_order}
               onlineshop={vendor.onlineshop}
               website={vendor.website}
+              pickup={vendor.pickup === null ? 1 : vendor.pickup}
               mail={vendor.mail}
               phone={vendor.phone}
               address={vendor.address}

@@ -56,6 +56,16 @@ function VendorCard (props) {
                 />
               </Col>
             </Row>
+            <Row>
+              <Col>
+              <Form.Check
+                  type="checkbox"
+                  checked={props.pickup}
+                  readOnly="True"
+                  label="Selbstabholer"
+                />
+              </Col>
+            </Row>
           </ListGroup.Item>
           <ListGroup.Item>
             <Row>
