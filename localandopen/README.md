@@ -1,7 +1,24 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Local and Open - Frontend
+
+This is the frontend of the Local and Open service, which ca be used to list local businesses
+that offer gift cards, delivery, pick-up or shipping during the COVID-19 pandemic.
+
+The main instance of this service runs at https://www.localandopen.de/
+
+## Setup
+
+Requirement: You need to have npm and nodejs installed.  
+Dependencies can be installed by running `npm install`  
+To then run the frontend, execute `npm run` and navigate to the displayed URL.
+
+## Contribution
+
+Contributions are welcome.
+Please fork the repository and create pull requests for individual contributions.
 
 ## Available Scripts
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).  
 In the project directory, you can run:
 
 ### `npm start`
